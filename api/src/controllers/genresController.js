@@ -1,5 +1,5 @@
 const axios = require("axios");
-const API_KEY = process.env;
+const { API_KEY } = process.env;
 const { Genre } = require("../db");
 
 const getGenres = async () => {
@@ -17,3 +17,5 @@ const getGenres = async () => {
     console.log("Error en getGenres: ", error);
   }
 };
+
+module.exports = getGenres;

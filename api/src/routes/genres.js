@@ -6,7 +6,8 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     const allGenres = await Genre.findAll();
-    res.status(200).send(allGenres);
+    const genresMap = allGenres?.map((g) => g.name);
+    res.status(200).send(genresMap);
   } catch (error) {
     console.log("Error en la ruta /genres: ", error);
   }

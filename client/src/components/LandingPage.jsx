@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import "./LandingPage.css";
 
 export default function LandingPage() {
   return (
-    <div>
-      <h1>Bienvenidos a mi Landinpage</h1>
+    <div className="fondo">
+      <h1 className="titulo">Videogame SPA</h1>
       <Link to="/home">
-        <button className="btn btn-primary">Mi botón de Bootstrap</button>
+        <button className="btn btn-secondary">INGRESAR</button>
       </Link>
     </div>
   );

@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { Videogame, Genre } = require("../db");
+const getAllVideogames = require("../controllers/videogamesController");
 
 const router = Router();
 
@@ -31,6 +32,21 @@ router.post("/", async (req, res) => {
     res.send("Videojuego creado con exito!");
   } catch (error) {
     console.log("Error en la ruta /videogame: ", error);
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const videogamesTotal = await getAllVideogames();
+    if (id) {
+      const videogameId = videogamesTotal?.filter((v) => v.id == id);
+      videogameId.length
+        ? res.status(200).json(videogameId)
+        : res.status(404).send("No se encuentra ese videojuego");
+    }
+  } catch (error) {
+    console.log("Error en la ruta /videogame/:id ", error);
   }
 });
 

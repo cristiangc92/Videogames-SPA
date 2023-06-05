@@ -1,11 +1,13 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./Card.css";
 
 export default function Card({ name, image, genres }) {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className="card">
+      <h4>{name}</h4>
       <img src={image} alt="" />
-      <h3>{genres}</h3>
+      <h5>{genres.join(",  ")}</h5>
     </div>
   );
 }

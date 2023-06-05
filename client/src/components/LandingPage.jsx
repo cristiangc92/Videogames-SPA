@@ -6,7 +6,7 @@ import "./LandingPage.css";
 export default function LandingPage() {
   return (
     <div className="fondo">
-      <h1 className="titulo">Videogame SPA</h1>
+      <h1 className="titulo">Videogames SPA</h1>
       <Link to="/home">
         <button className="btn btn-secondary">INGRESAR</button>
       </Link>

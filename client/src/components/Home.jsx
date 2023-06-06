@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames } from "../actions";
+import { getVideogames, filterVideogamesByGenre } from "../actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import "bootstrap/dist/css/bootstrap.css";
@@ -27,26 +27,14 @@ export default function Home() {
     dispatch(getVideogames());
   }, []);
 
-  // function handleClick(e) {
-  //   e.preventDefault();
-  //   dispatch(getVideogames());
-  // }
+  function handleFilterGenre(e) {
+    dispatch(filterVideogamesByGenre(e.target.value));
+  }
 
   return (
     <div className="fondoHome">
       <nav className="navbar navbar-expand-lg bg-secondary">
         <div className="container-fluid justify-content-center">
-          {/* <a class="navbar-brand" href="#">
-            <button
-              type="button"
-              class="btn btn-outline-secondary"
-              onClick={(e) => {
-                handleClick(e);
-              }}
-            >
-              VIDEOJUEGOS SPA
-            </button>
-          </a> */}
           <button
             className="navbar-toggler ps-5 pe-5"
             type="button"
@@ -79,6 +67,7 @@ export default function Home() {
                   className="form-select mt-2 pb-1 pe-3"
                   aria-label="Default select example"
                   defaultValue="Generos"
+                  onChange={(e) => handleFilterGenre(e)}
                 >
                   <option>Generos</option>
                   <option value="All">All</option>

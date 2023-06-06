@@ -6,10 +6,22 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Home.css";
+import Paginado from "./Paginado";
 
 export default function Home() {
   const dispatch = useDispatch();
   const allVideogames = useSelector((state) => state.videogames);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [videogamesPerPage, setVideogamesPerPage] = useState(15);
+  const indexOfLastVideogame = currentPage * videogamesPerPage;
+  const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
+  const currentVideogames = allVideogames?.slice(
+    indexOfFirstVideogame,
+    indexOfLastVideogame
+  );
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   useEffect(() => {
     dispatch(getVideogames());
@@ -36,7 +48,7 @@ export default function Home() {
             </button>
           </a> */}
           <button
-            className="navbar-toggler"
+            className="navbar-toggler ps-5 pe-5"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
@@ -52,20 +64,23 @@ export default function Home() {
           >
             <ul className="navbar-nav">
               <li className="nav-item me-5 ms-3">
-                <a className="nav-link active" aria-current="page" href="#">
-                  <Link to="/videogame">
-                    <button type="button" className="btn btn-light">
-                      Crear Videojuego
-                    </button>
-                  </Link>
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/videogame"
+                >
+                  <button type="button" className="btn btn-light">
+                    Crear Videojuego
+                  </button>
                 </a>
               </li>
               <li className="nav-item me-5 ms-3">
                 <select
                   className="form-select mt-2 pb-1 pe-3"
                   aria-label="Default select example"
+                  defaultValue="Generos"
                 >
-                  <option selected>Generos</option>
+                  <option>Generos</option>
                   <option value="All">All</option>
                   <option value="Action">Action</option>
                   <option value="Indie">Indie</option>
@@ -91,8 +106,9 @@ export default function Home() {
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
+                  defaultValue="Origen"
                 >
-                  <option selected>Origen</option>
+                  <option>Origen</option>
                   <option value="All">All</option>
                   <option value="created">Created</option>
                   <option value="api">Api</option>
@@ -102,8 +118,9 @@ export default function Home() {
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
+                  defaultValue="Orden"
                 >
-                  <option selected>Orden</option>
+                  <option>Orden</option>
                   <option value="asc">A to Z</option>
                   <option value="desc">Z to A</option>
                 </select>
@@ -112,8 +129,9 @@ export default function Home() {
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
+                  defaultValue="Rating"
                 >
-                  <option selected>Rating</option>
+                  <option>Rating</option>
                   <option value="high">HIGH</option>
                   <option value="low">LOW</option>
                 </select>
@@ -123,8 +141,14 @@ export default function Home() {
         </div>
       </nav>
 
+      <Paginado
+        videogamesPerPage={videogamesPerPage}
+        allVideogames={allVideogames.length}
+        paginado={paginado}
+      />
+
       <div className="card_contenedor">
-        {allVideogames?.map((v) => {
+        {currentVideogames?.map((v) => {
           return (
             <Card key={v.id} name={v.name} image={v.image} genres={v.genres} />
           );

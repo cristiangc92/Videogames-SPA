@@ -11,9 +11,15 @@ export function getVideogames() {
 }
 
 export function filterVideogamesByGenre(payload) {
-  console.log("PAYLOAD: ", payload);
   return {
     type: "FILTER_BY_GENRE",
+    payload,
+  };
+}
+
+export function filterCreated(payload) {
+  return {
+    type: "FILTER_CREATED",
     payload,
   };
 }

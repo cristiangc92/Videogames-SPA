@@ -1,7 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames, filterVideogamesByGenre } from "../actions";
+import {
+  getVideogames,
+  filterVideogamesByGenre,
+  filterCreated,
+} from "../actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import "bootstrap/dist/css/bootstrap.css";
@@ -29,6 +33,12 @@ export default function Home() {
 
   function handleFilterGenre(e) {
     dispatch(filterVideogamesByGenre(e.target.value));
+    setCurrentPage(1);
+  }
+
+  function handleFilterCreated(e) {
+    dispatch(filterCreated(e.target.value));
+    setCurrentPage(1);
   }
 
   return (
@@ -69,7 +79,7 @@ export default function Home() {
                   defaultValue="Generos"
                   onChange={(e) => handleFilterGenre(e)}
                 >
-                  <option>Generos</option>
+                  <option value="All">Generos</option>
                   <option value="All">All</option>
                   <option value="Action">Action</option>
                   <option value="Indie">Indie</option>
@@ -96,8 +106,9 @@ export default function Home() {
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
                   defaultValue="Origen"
+                  onChange={(e) => handleFilterCreated(e)}
                 >
-                  <option>Origen</option>
+                  <option value="All">Origen</option>
                   <option value="All">All</option>
                   <option value="created">Created</option>
                   <option value="api">Api</option>

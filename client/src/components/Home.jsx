@@ -5,6 +5,8 @@ import {
   getVideogames,
   filterVideogamesByGenre,
   filterCreated,
+  orderByName,
+  orderByRating,
 } from "../actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
@@ -39,6 +41,22 @@ export default function Home() {
   function handleFilterCreated(e) {
     dispatch(filterCreated(e.target.value));
     setCurrentPage(1);
+  }
+
+  const [orden, setOrden] = useState("");
+
+  function handleSort(e) {
+    e.preventDefault();
+    dispatch(orderByName(e.target.value));
+    setCurrentPage(1);
+    setOrden(e.target.value);
+  }
+
+  function handleSort2(e) {
+    e.preventDefault();
+    dispatch(orderByRating(e.target.value));
+    setCurrentPage(1);
+    setOrden(e.target.value);
   }
 
   return (
@@ -119,6 +137,7 @@ export default function Home() {
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
                   defaultValue="Orden"
+                  onChange={(e) => handleSort(e)}
                 >
                   <option>Orden</option>
                   <option value="asc">A to Z</option>
@@ -130,10 +149,11 @@ export default function Home() {
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
                   defaultValue="Rating"
+                  onChange={(e) => handleSort2(e)}
                 >
                   <option>Rating</option>
-                  <option value="high">HIGH</option>
-                  <option value="low">LOW</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
                 </select>
               </li>
             </ul>
@@ -150,7 +170,13 @@ export default function Home() {
       <div className="card_contenedor">
         {currentVideogames?.map((v) => {
           return (
-            <Card key={v.id} name={v.name} image={v.image} genres={v.genres} />
+            <Card
+              key={v.id}
+              name={v.name}
+              image={v.image}
+              genres={v.genres}
+              rating={v.rating}
+            />
           );
         })}
       </div>

@@ -25,3 +25,7 @@
 .card h5 {
   padding: 0.1rem;
 }
+
+.card span {
+  font-weight: lighter;
+}

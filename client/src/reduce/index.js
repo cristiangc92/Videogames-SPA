@@ -35,6 +35,63 @@ function rootReduce(state = initialState, action) {
           action.payload === "All" ? state.allVideogames : createdFilter,
       };
 
+    case "ORDER_BY_NAME":
+      const sortedArrName =
+        action.payload === "asc"
+          ? state.videogames.sort(function (a, b) {
+              if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                return 1;
+              }
+              if (b.name.toLowerCase() > a.name.toLowerCase()) {
+                return -1;
+              }
+              return 0;
+            })
+          : state.videogames.sort(function (a, b) {
+              if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                return -1;
+              }
+              if (b.name.toLowerCase() > a.name.toLowerCase()) {
+                return 1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        videogames: sortedArrName,
+      };
+
+    case "ORDER_BY_RATING":
+      const sortedArrRating =
+        action.payload === "low"
+          ? state.videogames.sort(function (a, b) {
+              if (a.rating > b.rating) {
+                return 1;
+              }
+              if (b.rating > a.rating) {
+                return -1;
+              }
+              return 0;
+            })
+          : action.payload === "high"
+          ? state.videogames.sort(function (a, b) {
+              if (a.rating > b.rating) {
+                return -1;
+              }
+              if (b.rating > a.rating) {
+                return 1;
+              }
+              return 0;
+            })
+          : state.videogames;
+      {
+        console.log(sortedArrRating);
+      }
+      return {
+        ...state,
+        videogames: sortedArrRating,
+      };
+
     default:
       return state;
   }

@@ -23,3 +23,17 @@ export function filterCreated(payload) {
     payload,
   };
 }
+
+export function orderByName(payload) {
+  return {
+    type: "ORDER_BY_NAME",
+    payload,
+  };
+}
+
+export function orderByRating(payload) {
+  return {
+    type: "ORDER_BY_RATING",
+    payload,
+  };
+}

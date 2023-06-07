@@ -37,3 +37,15 @@ export function orderByRating(payload) {
     payload,
   };
 }
+
+export function getNameVideogames(name) {
+  return async function (dispatch) {
+    const json = await axios.get(
+      "http://localhost:3001/videogames?name=" + name
+    );
+    return dispatch({
+      type: "GET_NAME_VIDEOGAME",
+      payload: json.data,
+    });
+  };
+}

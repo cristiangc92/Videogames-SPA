@@ -84,12 +84,15 @@ function rootReduce(state = initialState, action) {
               return 0;
             })
           : state.videogames;
-      {
-        console.log(sortedArrRating);
-      }
       return {
         ...state,
         videogames: sortedArrRating,
+      };
+
+    case "GET_NAME_VIDEOGAME":
+      return {
+        ...state,
+        videogames: action.payload,
       };
 
     default:

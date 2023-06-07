@@ -13,6 +13,7 @@ import Card from "./Card";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Home.css";
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -79,7 +80,7 @@ export default function Home() {
             id="navbarNavDropdown"
           >
             <ul className="navbar-nav">
-              <li className="nav-item me-5 ms-3">
+              <li className="nav-item">
                 <a
                   className="nav-link active"
                   aria-current="page"
@@ -90,7 +91,7 @@ export default function Home() {
                   </button>
                 </a>
               </li>
-              <li className="nav-item me-5 ms-3">
+              <li className="nav-item me-2">
                 <select
                   className="form-select mt-2 pb-1 pe-3"
                   aria-label="Default select example"
@@ -119,7 +120,7 @@ export default function Home() {
                   <option value="Card">Card</option>
                 </select>
               </li>
-              <li className="nav-item me-5 ms-3">
+              <li className="nav-item me-2">
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
@@ -132,7 +133,7 @@ export default function Home() {
                   <option value="api">Api</option>
                 </select>
               </li>
-              <li className="nav-item me-5 ms-3">
+              <li className="nav-item me-2">
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
@@ -144,7 +145,7 @@ export default function Home() {
                   <option value="desc">Z to A</option>
                 </select>
               </li>
-              <li className="nav-item me-5 ms-3">
+              <li className="nav-item me-2 mb-2">
                 <select
                   className="form-select mt-2 pb-1"
                   aria-label="Default select example"
@@ -157,6 +158,7 @@ export default function Home() {
                 </select>
               </li>
             </ul>
+            <SearchBar />
           </div>
         </div>
       </nav>

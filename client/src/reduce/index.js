@@ -2,6 +2,7 @@ const initialState = {
   videogames: [],
   allVideogames: [],
   genres: [],
+  detail: [],
 };
 
 function rootReduce(state = initialState, action) {
@@ -105,6 +106,18 @@ function rootReduce(state = initialState, action) {
     case "POST_VIDEOGAME":
       return {
         ...state,
+      };
+
+    case "GET_DETAILS":
+      return {
+        ...state,
+        detail: action.payload,
+      };
+
+    case "VACIAR_DETAIL":
+      return {
+        ...state,
+        detail: [],
       };
 
     default:

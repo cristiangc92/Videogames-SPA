@@ -8,7 +8,7 @@ export default function Card({ name, image, genres, rating }) {
       <h4>{name}</h4>
       <img src={image} alt="" />
       <h5>
-        <span>◊ Genres:</span> {genres.join(",  ")}
+        <span>◊ Genres:</span> {genres.join(",  ") + "."}
       </h5>
       <h5>
         <span>☆ Rating:</span> {rating}

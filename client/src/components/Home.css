@@ -14,9 +14,25 @@
   flex-wrap: wrap;
 }
 
+.link {
+  margin-bottom: 2rem;
+}
+
+.link2 {
+  text-decoration: none;
+}
+
+.loadingFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media (max-width: 320px) {
   .card_contenedor {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 }

@@ -164,163 +164,165 @@ export default function VideogameCreate() {
 
   return (
     <div className="fondoCreate">
-      <form
-        id="formulario"
-        className="row g-3 justify-content-center m-4 pb-3 backgroundForm"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <div className="col-md-5">
-          <label htmlFor="validationDefault01" className="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="validationDefault01"
-            value={input.name}
-            name="name"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault02" className="form-label">
-            Description
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="validationDefault02"
-            value={input.description}
-            name="description"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault03" className="form-label">
-            Released
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            id="validationDefault03"
-            value={input.released}
-            name="released"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault04" className="form-label">
-            Rating
-          </label>
-          <input
-            type="number"
-            className="form-control"
-            id="validationDefault04"
-            value={input.rating}
-            name="rating"
-            placeholder="0"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault06" className="form-label">
-            Genres
-          </label>
-          <select
-            className="form-select mb-1"
-            id="validationDefault06"
-            defaultValue="Choose"
-            onChange={(e) => handleSelect(e)}
-          >
-            <option disabled value="Choose">
-              Choose...
-            </option>
-            {genres?.map((g) => (
-              <option value={g} key={g}>
-                {g}
+      <div className="contenedorForm">
+        <form
+          id="formulario"
+          className="row g-3 justify-content-center m-4 pb-3 backgroundForm"
+          onSubmit={(e) => handleSubmit(e)}
+        >
+          <div className="col-md-5">
+            <label htmlFor="validationDefault01" className="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="validationDefault01"
+              value={input.name}
+              name="name"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault02" className="form-label">
+              Description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="validationDefault02"
+              value={input.description}
+              name="description"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault03" className="form-label">
+              Released
+            </label>
+            <input
+              type="date"
+              className="form-control"
+              id="validationDefault03"
+              value={input.released}
+              name="released"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault04" className="form-label">
+              Rating
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="validationDefault04"
+              value={input.rating}
+              name="rating"
+              placeholder="0"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault06" className="form-label">
+              Genres
+            </label>
+            <select
+              className="form-select mb-1"
+              id="validationDefault06"
+              defaultValue="Choose"
+              onChange={(e) => handleSelect(e)}
+            >
+              <option disabled value="Choose">
+                Choose...
               </option>
-            ))}
-          </select>
-          <ul className="list-group justify-content-center list-group-horizontal">
-            <li className="list-group-item p-1">
-              {input.genres?.map((g) => (
-                <div key={g}>
-                  {g + " "}
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-sm buttonClose"
-                    onClick={() => handleDelete(g)}
-                  >
-                    X
-                  </button>
-                </div>
+              {genres?.map((g) => (
+                <option value={g} key={g}>
+                  {g}
+                </option>
               ))}
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault07" className="form-label">
-            Platforms
-          </label>
-          <select
-            className="form-select mb-1"
-            id="validationDefault07"
-            onChange={(e) => handleSelect2(e)}
-            defaultValue="Choose"
-          >
-            <option disabled value="Choose">
-              Choose...
-            </option>
-            {platformsArr?.map((p) => (
-              <option value={p} key={p}>
-                {p}
+            </select>
+            <ul className="list-group justify-content-center list-group-horizontal">
+              <li className="list-group-item p-1">
+                {input.genres?.map((g) => (
+                  <div key={g}>
+                    {g + " "}
+                    <button
+                      type="button"
+                      className="btn btn-secondary btn-sm buttonClose"
+                      onClick={() => handleDelete(g)}
+                    >
+                      X
+                    </button>
+                  </div>
+                ))}
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault07" className="form-label">
+              Platforms
+            </label>
+            <select
+              className="form-select mb-1"
+              id="validationDefault07"
+              onChange={(e) => handleSelect2(e)}
+              defaultValue="Choose"
+            >
+              <option disabled value="Choose">
+                Choose...
               </option>
-            ))}
-          </select>
-          <ul className="list-group justify-content-center list-group-horizontal">
-            <li className="list-group-item p-1">
-              {input.platforms?.map((p) => (
-                <div key={p}>
-                  {p + " "}
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-sm buttonClose"
-                    onClick={() => handleDelete2(p)}
-                  >
-                    X
-                  </button>
-                </div>
+              {platformsArr?.map((p) => (
+                <option value={p} key={p}>
+                  {p}
+                </option>
               ))}
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-5">
-          <label htmlFor="validationDefault05" className="form-label">
-            Image
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="validationDefault05"
-            value={input.image}
-            name="image"
-            placeholder="URL"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="col-12 d-flex justify-content-center">
-          <button className="btn btn-light" type="submit">
-            Create Videogame ✓
-          </button>
-        </div>
-        <div className="col-12 d-flex justify-content-center">
-          <a className="nav-link active" aria-current="page" href="/home">
-            <button type="button" className="btn btn-light">
-              ◁ Volver
+            </select>
+            <ul className="list-group justify-content-center list-group-horizontal">
+              <li className="list-group-item p-1">
+                {input.platforms?.map((p) => (
+                  <div key={p}>
+                    {p + " "}
+                    <button
+                      type="button"
+                      className="btn btn-secondary btn-sm buttonClose"
+                      onClick={() => handleDelete2(p)}
+                    >
+                      X
+                    </button>
+                  </div>
+                ))}
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="validationDefault05" className="form-label">
+              Image
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="validationDefault05"
+              value={input.image}
+              name="image"
+              placeholder="URL"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="col-12 d-flex justify-content-center">
+            <button className="btn btn-light" type="submit">
+              Create Videogame ✓
             </button>
-          </a>
-        </div>
-      </form>
+          </div>
+          <div className="col-12 d-flex justify-content-center">
+            <a className="nav-link active" aria-current="page" href="/home">
+              <button type="button" className="btn btn-light">
+                ◁ Volver
+              </button>
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

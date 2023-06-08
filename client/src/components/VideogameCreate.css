@@ -21,7 +21,20 @@ label {
   font-weight: bold;
 }
 
+.contenedorForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 425px) {
+  .fondoCreate {
+    height: 100%;
+    width: 100%;
+  }
+
   label {
     display: flex;
     justify-content: center;

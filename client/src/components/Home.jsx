@@ -39,7 +39,7 @@ export default function Home() {
         setLoading(false);
       })
       .catch((error) => setError(error.message));
-  }, []);
+  }, [dispatch]);
 
   function handleFilterGenre(e) {
     dispatch(filterVideogamesByGenre(e.target.value));
@@ -104,11 +104,14 @@ export default function Home() {
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <a
-                      className="nav-link active"
+                      className="nav-link active bontonCrear"
                       aria-current="page"
                       href="/videogame"
                     >
-                      <button type="button" className="btn btn-light">
+                      <button
+                        type="button"
+                        className="btn btn-light buttonCrear"
+                      >
                         Crear Videojuego
                       </button>
                     </a>

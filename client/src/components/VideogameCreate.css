@@ -1,0 +1,32 @@
+.fondoCreate {
+  background-image: url("../assets/landingpage.avif");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  overflow: auto;
+}
+
+.backgroundForm {
+  background-color: #6c757d;
+  border-radius: 2rem;
+}
+
+.buttonClose {
+  border-radius: 100%;
+}
+
+label {
+  font-weight: bold;
+}
+
+@media (max-width: 425px) {
+  label {
+    display: flex;
+    justify-content: center;
+  }
+  .backgroundForm {
+    border-radius: 1rem;
+  }
+}

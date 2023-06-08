@@ -1,6 +1,7 @@
 const initialState = {
   videogames: [],
   allVideogames: [],
+  genres: [],
 };
 
 function rootReduce(state = initialState, action) {
@@ -93,6 +94,17 @@ function rootReduce(state = initialState, action) {
       return {
         ...state,
         videogames: action.payload,
+      };
+
+    case "GET_GENRES":
+      return {
+        ...state,
+        genres: action.payload,
+      };
+
+    case "POST_VIDEOGAME":
+      return {
+        ...state,
       };
 
     default:

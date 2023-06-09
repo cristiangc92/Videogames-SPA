@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./LandingPage.css";
 
 export default function LandingPage() {
+  alert(process.env.REACT_APP_API);
   return (
     <div className="fondo">
       <h1 className="titulo">Videogames SPA</h1>

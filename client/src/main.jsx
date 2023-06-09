@@ -9,6 +9,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import axios from "axios";
 // import dotenv from "dotenv";
 // dotenv.config();
+const { REACT_APP_API } = process.env;
 
 axios.defaults.baseURL = REACT_APP_API;
 

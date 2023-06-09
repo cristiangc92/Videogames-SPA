@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail, vaciarDetail } from "../actions";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Detail.css";
 
 export default function Detail(props) {
@@ -43,11 +44,11 @@ export default function Detail(props) {
             <span>📜 Description:</span>{" "}
           </h4>
           <h5 dangerouslySetInnerHTML={{ __html: myVideogame.description }} />
-          <a href="/home">
+          <Link to={"/home"}>
             <button type="button" className="btn btn-light">
               ◁ Volver
             </button>
-          </a>
+          </Link>
         </div>
       ) : (
         <br />

@@ -69,6 +69,7 @@ export default function Home() {
 
   return (
     <div className="fondoHome">
+      {alert("POR AQUI: ", process.env.REACT_APP_API)}
       {error ? (
         <div>
           <h1>{error}</h1>

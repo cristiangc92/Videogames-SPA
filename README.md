@@ -1,4 +1,4 @@
-# Videogames - SPA (Deployado)
+# Videogames - SPA (Deployado y Responsive)
 
 # Proyecto (Single Page Application) Videogames App #
 

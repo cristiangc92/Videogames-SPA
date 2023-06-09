@@ -2,7 +2,6 @@ import axios from "axios";
 
 export function getVideogames() {
   return async function (dispatch) {
-    const json = await axios.get("/videogames");
     alert("JSON: ", json.data);
     return dispatch({
       type: "GET_VIDEOGAMES",

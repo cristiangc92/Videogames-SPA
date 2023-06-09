@@ -10,7 +10,7 @@ import axios from "axios";
 // import dotenv from "dotenv";
 // dotenv.config();
 
-axios.defaults.baseURL = "https://videogames-spa.onrender.com/";
+axios.defaults.baseURL = "https://videogames-spa.onrender.com";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>

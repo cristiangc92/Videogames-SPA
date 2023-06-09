@@ -1,14 +1,9 @@
-/* .fondoDetail {
+.fondoDetail {
   background-image: url("../assets/landingpage.avif");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-.fondoDetail {
   display: flex;
   justify-content: center;
   align-items: center;

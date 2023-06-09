@@ -1,4 +1,4 @@
-/* .fondoHome {
+.fondoHome {
   background-image: url("../assets/landingpage.avif");
   background-size: cover;
   background-position: center;
@@ -6,7 +6,7 @@
   width: 100vw;
   background-attachment: fixed;
   overflow: auto;
-} */
+}
 
 .card_contenedor {
   display: flex;

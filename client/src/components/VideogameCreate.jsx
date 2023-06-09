@@ -315,11 +315,13 @@ export default function VideogameCreate() {
             </button>
           </div>
           <div className="col-12 d-flex justify-content-center">
-            <a className="nav-link active" aria-current="page" href="/home">
-              <button type="button" className="btn btn-light">
-                ◁ Volver
-              </button>
-            </a>
+            <Link to={"/videogame"}>
+              <a className="nav-link active" aria-current="page">
+                <button type="button" className="btn btn-light">
+                  ◁ Volver
+                </button>
+              </a>
+            </Link>
           </div>
         </form>
       </div>

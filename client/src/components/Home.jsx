@@ -103,18 +103,19 @@ export default function Home() {
               >
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a
-                      className="nav-link active bontonCrear"
-                      aria-current="page"
-                      href="/videogame"
-                    >
-                      <button
-                        type="button"
-                        className="btn btn-light buttonCrear"
+                    <Link to={"/videogame"}>
+                      <a
+                        className="nav-link active bontonCrear"
+                        aria-current="page"
                       >
-                        Crear Videojuego
-                      </button>
-                    </a>
+                        <button
+                          type="button"
+                          className="btn btn-light buttonCrear"
+                        >
+                          Crear Videojuego
+                        </button>
+                      </a>
+                    </Link>
                   </li>
                   <li className="nav-item me-2">
                     <select

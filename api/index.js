@@ -23,7 +23,7 @@ const getGenres = require("./src/controllers/genresController.js");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, async () => {
+  server.listen(process.env.PORT, async () => {
     console.log("%s cargando generos...");
     await getGenres();
     console.log("%s listening at 3001"); // eslint-disable-line no-console

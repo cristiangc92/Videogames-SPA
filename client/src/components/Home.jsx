@@ -69,7 +69,6 @@ export default function Home() {
 
   return (
     <div className="fondoHome">
-      {alert("POR AQUI: ", process.env.API_KEY)}
       {error ? (
         <div>
           <h1>{error}</h1>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postVideogame, getGenres, getVideogames } from "../actions";
+import { Link } from "react-router-dom";
 import "./VideogameCreate.css";
 import "bootstrap/dist/css/bootstrap.css";
 

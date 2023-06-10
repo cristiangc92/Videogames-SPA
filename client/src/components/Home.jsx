@@ -112,7 +112,7 @@ export default function Home() {
                           type="button"
                           className="btn btn-light buttonCrear"
                         >
-                          Crear Videojuego
+                          Create Videogame
                         </button>
                       </a>
                     </Link>
@@ -124,7 +124,7 @@ export default function Home() {
                       defaultValue="Generos"
                       onChange={(e) => handleFilterGenre(e)}
                     >
-                      <option value="All">Generos</option>
+                      <option value="All">Genres</option>
                       <option value="All">All</option>
                       <option value="Action">Action</option>
                       <option value="Indie">Indie</option>
@@ -153,7 +153,7 @@ export default function Home() {
                       defaultValue="Origen"
                       onChange={(e) => handleFilterCreated(e)}
                     >
-                      <option value="All">Origen</option>
+                      <option value="All">Origin</option>
                       <option value="All">All</option>
                       <option value="created">Created</option>
                       <option value="api">Api</option>
@@ -166,7 +166,7 @@ export default function Home() {
                       defaultValue="Orden"
                       onChange={(e) => handleSort(e)}
                     >
-                      <option>Orden</option>
+                      <option>Order</option>
                       <option value="asc">A to Z</option>
                       <option value="desc">Z to A</option>
                     </select>

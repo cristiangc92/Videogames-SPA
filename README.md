@@ -15,6 +15,8 @@
 
 # Proyecto (Single Page Application) Videogames App #
 
+#### Deploy Backend: https://videogames-spa-seven.vercel.app/
+#### Deploy Frontend: https://videogames-spa.onrender.com/
 
 #### Tecnologías necesarias:
 - [ ] React

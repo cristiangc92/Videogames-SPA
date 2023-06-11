@@ -1,16 +1,16 @@
 # Videogames - SPA (Deployado y Responsive)
 
 <p align="center">
-  <img height="500" src="./videogamesSPA1.png" />
+  <img src="./videogamesSPA1.png" />
 </p>
 <p align="center">
-  <img height="500" src="./videogamesSPA2.png" />
+  <img src="./videogamesSPA2.png" />
 </p>
 <p align="center">
-  <img height="500" src="./videogamesSPA3.png" />
+  <img src="./videogamesSPA3.png" />
 </p>
 <p align="center">
-  <img height="500" src="./videogamesSPA3.png" />
+  <img src="./videogamesSPA3.png" />
 </p>
 
 # Proyecto (Single Page Application) Videogames App #

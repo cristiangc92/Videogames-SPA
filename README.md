@@ -10,7 +10,7 @@
   <img src="./videogamesSPA3.png" />
 </p>
 <p align="center">
-  <img src="./videogamesSPA3.png" />
+  <img src="./videogamesSPA4.png" />
 </p>
 
 # Proyecto (Single Page Application) Videogames App #

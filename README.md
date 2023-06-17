@@ -15,8 +15,8 @@
 
 # Proyecto (Single Page Application) Videogames App #
 
-#### ► Deploy Backend: https://videogames-spa-seven.vercel.app/
-#### ► Deploy Frontend: https://videogames-spa.onrender.com/
+#### ► Deploy Backend: https://videogames-spa.onrender.com/
+#### ► Deploy Frontend: https://videogames-spa-seven.vercel.app/
 
 #### Tecnologías necesarias:
 - [ ] React
@@ -29,7 +29,7 @@ __IMPORTANTE__: Se utilizo Bootstrap y sus correspondientes estilos, ademas de C
 
 ## Descripción 
 
-Esta es una aplicación en la cual se puedan ver distintas videojuegos junto con información relevante de los mismas utilizando la api externa [rawg](https://rawg.io/apidocs) y a partir de ella poder, entre otras cosas:
+Es una aplicación en la cual se pueden ver distintos videojuegos junto con información relevante de los mismas utilizando la api externa [rawg](https://rawg.io/apidocs) y a partir de ella poder, entre otras cosas:
 
   - Buscar videojuegos
   - Filtrarlos / Ordenarlos
@@ -94,9 +94,9 @@ El modelo de la base de datos:
   - ID: *
   - Nombre *
   - Descripción *
-  - Descripción
-  - Descripción
-  - Descripción *
+  - Released
+  - Rating
+  - Platforms *
 - [ ] Genero con las siguientes propiedades:
   - ID
   - Nombre
@@ -158,7 +158,7 @@ Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credencial
 
 Adicionalmente será necesario que creen desde psql una base de datos llamada `videogame`
 
-El contenido de `client` fue creado usando: Create React App.
+El contenido de `client` fue creado usando: Vite.
 
 Una vez abierto el proyecto es necesario iniciarlo: 
 
